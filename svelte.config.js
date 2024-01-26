@@ -8,13 +8,10 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapter({
-            pages: "docs",
-            assets: "docs"
-        }),
+		adapter: adapter(),
 
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
+			base: process.env.NODE_ENV === 'production' ? '/' : '',
 		  },
 	}
 };
