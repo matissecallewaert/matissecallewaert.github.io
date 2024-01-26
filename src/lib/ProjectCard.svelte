@@ -7,7 +7,7 @@
 	let headerColorClass: string;
 
 	$: {
-		headerColorClass = `${colorClass.replace('100', '300')}`;
+		headerColorClass = `${colorClass.replace('200', '300')}`;
 	}
 </script>
 
@@ -26,6 +26,9 @@
 		transition: all 0.2s;
 		position: relative;
 		cursor: pointer;
+		box-shadow:
+			0 4px 8px 0 rgba(0, 0, 0, 0.2),
+			0 4px 8px 0 rgba(0, 0, 0, 0.2);
 	}
 
 	.card-inner {

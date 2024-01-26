@@ -16,3 +16,9 @@
 		<div class="text-center text-gray-700">© {currentYear} Portfolio of Matisse Callewaert</div>
 	</footer>
 </div>
+
+<style>
+	.app {
+		background-color: #f5f5f5;
+	}
+</style>
