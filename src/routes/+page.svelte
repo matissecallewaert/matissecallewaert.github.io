@@ -1,41 +1,6 @@
 <script lang="ts">
 	import ProjectCard from '$lib/ProjectCard.svelte';
 	import '@fortawesome/fontawesome-free/css/all.css';
-	import { onMount } from 'svelte';
-	import lax from 'lax.js';
-
-	let updateLax;
-
-  onMount(() => {
-    lax.init();
-
-    lax.addDriver('scrollY', () => window.scrollY);
-
-    lax.addElements('.project-card', {
-      scrollY: {
-        scale: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0.5, 1, 0.5],
-        ],
-        opacity: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, 1, 0],
-        ]
-      }
-    });
-
-    const handleScroll = () => {
-      lax.update(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    updateLax = () => lax.update(window.scrollY);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  });
 </script>
 
 <svelte:head>
@@ -43,13 +8,12 @@
 	<meta name="description" content="Portfolio of Matisse Callewaert" />
 </svelte:head>
 
-<main class="scroll-container px-8">
+<main class="px-8">
 	<section
-		class="mt-6 flex space-x-6 h-auto intro-section full-height-section items-center justify-center"
+	class="mt-6 flex space-x-6 items-center justify-center" style="align-items: stretch"
 	>
 		<div
-			class="bg-gradient-to-br from-blue-100 to-gray-400 p-8 rounded-xl w-1/2 ml-8"
-			style="height: fit-content;"
+			class="bg-gradient-to-br from-blue-50 to-gray-400 p-8 rounded-xl w-1/2 ml-8 h-auto items-center justify-center"
 		>
 			<h1 class="text-4xl font-bold text-gray-700">Hey, I’m Matisse Callewaert</h1>
 			<p class="mt-4 text-gray-700">
@@ -84,20 +48,16 @@
 				</a>
 			</div>
 		</div>
-		<div class="w-auto">
-			<img
-				src="/me.png"
-				alt="Matisse smiling, standing next to a river with historical buildings and trees in the background"
-				class="rounded-xl"
-			/>
+		<div class="w-1/3">
+			<img src="/me.jpg" alt="Matisse smiling, standing next to a river with historical buildings and trees in the background" class="rounded-xl">
 		</div>
 	</section>
 
 	<section class="mt-10 projects-section">
 		<div class="grid grid-cols-2 gap-6 mt-6">
-			<div class="project-card">
+			<div class="project-card left">
 				<ProjectCard
-					title="PS Consultancy"
+					title="1"
 					description="PS Consultancy is a consultancy company that provides services to the public sector. I worked on the development of a web application for the Flemish government."
 					imageUrl="https://placehold.co/300x300"
 					altText="PS Consultancy logo"
@@ -105,27 +65,27 @@
 				/>
 			</div>
 
-			<div class="project-card">
+			<div class="project-card right">
 				<ProjectCard
-					title="PS Consultancy"
+					title="2"
 					description="PS Consultancy is a consultancy company that provides services to the public sector. I worked on the development of a web application for the Flemish government."
 					imageUrl="https://placehold.co/300x300"
 					altText="PS Consultancy logo"
 					colorClass="bg-blue-100"
 				/>
 			</div>
-			<div class="project-card">
+			<div class="project-card left">
 				<ProjectCard
-					title="PS Consultancy"
+					title="3"
 					description="PS Consultancy is a consultancy company that provides services to the public sector. I worked on the development of a web application for the Flemish government."
 					imageUrl="https://placehold.co/300x300"
 					altText="PS Consultancy logo"
 					colorClass="bg-blue-100"
 				/>
 			</div>
-			<div class="project-card">
+			<div class="project-card right">
 				<ProjectCard
-					title="PS Consultancy"
+					title="4"
 					description="PS Consultancy is a consultancy company that provides services to the public sector. I worked on the development of a web application for the Flemish government."
 					imageUrl="https://placehold.co/300x300"
 					altText="PS Consultancy logo"
@@ -140,12 +100,4 @@
 	@tailwind base;
 	@tailwind components;
 	@tailwind utilities;
-
-	.intro-section {
-		height: 100vh;
-	}
-
-	.project-card {
-		will-change: transform, opacity;
-	}
 </style>
