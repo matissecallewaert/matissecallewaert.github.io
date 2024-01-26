@@ -15,7 +15,10 @@ const config = {
 		adapter: adapter({
 			pages: 'docs',
 			assets: 'docs',
-		})
+		}),
+		paths: {
+			base: process.env.NODE_ENV === 'production' ? '/repository-name' : '',
+		  },
 	},
 	preprocess: [
 		preprocess({

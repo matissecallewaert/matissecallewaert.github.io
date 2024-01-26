@@ -1,6 +1,7 @@
 <script lang="ts">
 	import ProjectCard from '$lib/ProjectCard.svelte';
 	import '@fortawesome/fontawesome-free/css/all.css';
+	import { base } from '$app/paths';
 </script>
 
 <svelte:head>
@@ -50,7 +51,7 @@
 		</div>
 		<div class="w-1/3">
 			<img
-				src="/me.jpg"
+				src={`${base}/me.jpg`}
 				alt="Matisse smiling, standing next to a river with historical buildings and trees in the background"
 				class="rounded-xl"
 			/>
