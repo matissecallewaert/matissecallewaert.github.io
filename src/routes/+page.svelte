@@ -25,7 +25,7 @@
 			</p>
 			<div class="flex items-center space-x-2 mt-8">
 				<a
-					href="/contact"
+					href="#"
 					class="bg-gray-700 text-white px-4 py-2 rounded-full hover:bg-gray-800 flex items-center transition duration-500 ease-in-out transform hover:scale-105"
 					>Contact me</a
 				>
