@@ -23,20 +23,20 @@
 
 <style>
 	.card {
-  transition: all 0.2s;
-  position: relative;
-  cursor: pointer;
-}
+		transition: all 0.2s;
+		position: relative;
+		cursor: pointer;
+	}
 
-.card-inner {
-  width: inherit;
-  height: inherit;
-  background: rgba(255,255,255,.05);
-  border-radius: 8px;
-}
+	.card-inner {
+		width: inherit;
+		height: inherit;
+		background: rgba(255, 255, 255, 0.05);
+		border-radius: 8px;
+	}
 
-.card:hover {
-	transform: scale(1.04) rotate(1deg);
-	transition: transform 0.5s;
-}
+	.card:hover {
+		transform: scale(1.04) rotate(1deg);
+		transition: transform 0.5s;
+	}
 </style>

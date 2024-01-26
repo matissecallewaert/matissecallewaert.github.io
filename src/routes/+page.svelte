@@ -9,9 +9,7 @@
 </svelte:head>
 
 <main class="px-8">
-	<section
-	class="mt-6 flex space-x-6 items-center justify-center" style="align-items: stretch"
-	>
+	<section class="mt-6 flex space-x-6 items-center justify-center" style="align-items: stretch">
 		<div
 			class="bg-gradient-to-br from-blue-50 to-gray-400 p-8 rounded-xl w-1/2 ml-8 h-auto items-center justify-center"
 		>
@@ -26,10 +24,12 @@
 				of our imagination.
 			</p>
 			<div class="flex items-center space-x-2 mt-8">
-				<button
+				<a
+					href="/contact"
 					class="bg-gray-700 text-white px-4 py-2 rounded-full hover:bg-gray-800 flex items-center transition duration-500 ease-in-out transform hover:scale-105"
-					><a href="/contact">Contact me</a></button
+					>Contact me</a
 				>
+
 				<a
 					href="https://github.com/matissecallewaert"
 					target="_blank"
@@ -49,7 +49,11 @@
 			</div>
 		</div>
 		<div class="w-1/3">
-			<img src="/me.jpg" alt="Matisse smiling, standing next to a river with historical buildings and trees in the background" class="rounded-xl">
+			<img
+				src="/me.jpg"
+				alt="Matisse smiling, standing next to a river with historical buildings and trees in the background"
+				class="rounded-xl"
+			/>
 		</div>
 	</section>
 
