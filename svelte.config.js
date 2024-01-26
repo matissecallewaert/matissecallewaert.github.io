@@ -17,7 +17,7 @@ const config = {
 			assets: 'docs',
 		}),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/repository-name' : '',
+			base: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
 		  },
 	},
 	preprocess: [
