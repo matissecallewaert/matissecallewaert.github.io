@@ -15,10 +15,7 @@ const config = {
 		adapter: adapter({
 			pages: 'docs',
 			assets: 'docs'
-		}),
-		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/portfolio' : ''
-		}
+		})
 	},
 	preprocess: [
 		preprocess({
