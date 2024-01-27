@@ -2,83 +2,6 @@
 	import ProjectCard from '$lib/ProjectCard.svelte';
 	import '@fortawesome/fontawesome-free/css/all.css';
 	import { base } from '$app/paths';
-	import { onMount } from 'svelte';
-
-	let canvas: HTMLCanvasElement;
-	let images: HTMLImageElement[] = []; // Array to store loaded images
-	let imagePaths = [
-		'github.svg',
-		'linux.svg',
-		'ml.svg',
-		'node.svg',
-		'py.svg',
-		'react.svg',
-		'rust.svg',
-		'sql.svg',
-		'ts.svg'
-	]; // Replace with actual paths
-
-	// Function to load images
-	function loadImages(): Promise<HTMLImageElement[]> {
-		return Promise.all(
-			imagePaths.map((path) => {
-				return new Promise<HTMLImageElement>((resolve, reject) => {
-					let img = new Image();
-					img.onload = () => resolve(img);
-					img.onerror = reject;
-					img.src = `${base}/${path}`;
-				});
-			})
-		);
-	}
-
-	// Ensure this matches the ID of your canvas element
-	onMount(() => {
-		canvas = document.getElementById('myCanvas') as HTMLCanvasElement;
-		const ctx = canvas.getContext('2d')!;
-		loadImages().then((loadedImages) => {
-			images = loadedImages;
-			requestAnimationFrame(() => drawInfinityCurve(ctx, images));
-		});
-		// Adjust these values to make the icon size smaller
-		const iconWidth = 30; // Decrease icon width as needed
-		const iconHeight = 30; // Decrease icon height as needed
-
-		// Generate a random phase for each icon
-		const steps = imagePaths.length; // Number of icons
-		const offsetIncrement = (2 * Math.PI) / steps;
-
-		let time = 0;
-
-		function drawInfinityCurve(ctx: CanvasRenderingContext2D, images: HTMLImageElement[]) {
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-			// Define the size and position of the curve
-			const centerX = canvas.width / 2;
-			const centerY = canvas.height / 2;
-			const size = Math.min(canvas.width, canvas.height) / 3;
-
-			// Draw the infinity curve using the lemniscate of Bernoulli (a figure-eight curve)
-			const scale = size * 2;
-			const speed = 0.0045; // Speed of the animation
-
-			for (let i = 0; i < steps; i++) {
-				const phaseOffset = offsetIncrement * i;
-				const t = (time + phaseOffset) % (2 * Math.PI); // Parameter t from 0 to 2*PI
-				const x = (scale * Math.sin(t)) / (1 + Math.pow(Math.cos(t), 2)) + centerX;
-				const y = (scale * Math.sin(t) * Math.cos(t)) / (1 + Math.pow(Math.cos(t), 2)) + centerY;
-
-				const image = images[i];
-
-				// Draw the icon at position (x, y)
-				ctx.drawImage(image, x - iconWidth / 2, y - iconHeight / 2, iconWidth, iconHeight);
-			}
-
-			// Update time
-			time += speed;
-			requestAnimationFrame(() => drawInfinityCurve(ctx, images)); // Call the next frame in the animation
-		}
-	});
 </script>
 
 <svelte:head>
@@ -125,8 +48,12 @@
 					</a>
 				</div>
 			</div>
-			<div class="w-auto h-auto mt-8 rounded-xl canvas-wrapper">
-				<canvas id="myCanvas"></canvas>
+			<div class="w-auto h-auto mt-8 rounded-xl skill-wrapper">
+				<img
+					src="https://skillicons.dev/icons?i=git,ts,react,prisma,mysql,nodejs,docker,kotlin,androidstudio,rust,bash,cs,dotnet,aws,azure,angular,postgresql,gitlab,js,py,tensorflow,cpp,postman,java,md,rabbitmq,sentry,svelte,tailwind"
+					alt="skill icons"
+					class="rounded-xl p-10"
+				/>
 			</div>
 		</div>
 		<div>
@@ -138,44 +65,47 @@
 		</div>
 	</section>
 
-	<section class="mt-10 projects-section">
+	<section class="mt-10">
 		<h3 class="text-3xl font-bold text-gray-700">My Projects</h3>
-		<div class="grid grid-cols-2 gap-6 mt-6">
+		<div class="gap-6 mt-6 projects-section">
 			<div class="project-card left">
 				<ProjectCard
-					title="1"
-					description="PS Consultancy is a consultancy company that provides services to the public sector. I worked on the development of a web application for the Flemish government."
-					imageUrl="https://placehold.co/300x300"
-					altText="PS Consultancy logo"
-					colorClass="bg-purple-200"
-				/>
-			</div>
-
-			<div class="project-card right">
-				<ProjectCard
-					title="2"
-					description="PS Consultancy is a consultancy company that provides services to the public sector. I worked on the development of a web application for the Flemish government."
-					imageUrl="https://placehold.co/300x300"
-					altText="PS Consultancy logo"
-					colorClass="bg-orange-200"
-				/>
-			</div>
-			<div class="project-card left">
-				<ProjectCard
-					title="3"
-					description="PS Consultancy is a consultancy company that provides services to the public sector. I worked on the development of a web application for the Flemish government."
-					imageUrl="https://placehold.co/300x300"
-					altText="PS Consultancy logo"
-					colorClass="bg-white-200"
+					title="Sales2Cash"
+					description="A WaaS solution enabling businesses to track invoices and optimize their cash flow managment."
+					imageUrl="{base}/sales2cash.png"
+					altText="Sales2Cash banner"
 				/>
 			</div>
 			<div class="project-card right">
 				<ProjectCard
-					title="4"
-					description="PS Consultancy is a consultancy company that provides services to the public sector. I worked on the development of a web application for the Flemish government."
-					imageUrl="https://placehold.co/300x300"
-					altText="PS Consultancy logo"
-					colorClass="bg-green-200"
+					title="Faction Game"
+					description="A programmer-centric game where you program your custom decision logic to compete for total faction dominance."
+					imageUrl="{base}/faction.png"
+					altText="faction game world map"
+				/>
+			</div>
+			<div class="project-card right">
+				<ProjectCard
+					title="Simpel music player app"
+					description="A straightforward music player app built with Kotlin in android studio."
+					imageUrl="{base}/music_player_small.jpg"
+					altText="Screenshot of the music player app"
+				/>
+			</div>
+			<div class="project-card left">
+				<ProjectCard
+					title="NulVision"
+					description="A web app to detect and identify objects in drone images. I worked on the backend and the integration of the machine learning model."
+					imageUrl="{base}/nulvision.png"
+					altText="Screenshot of the NulVision web app"
+				/>
+			</div>
+			<div class="project-card left">
+				<ProjectCard
+					title="Master thesis"
+					description="A tool for extracting features in network intrusion detection systems using EBPF and Rust."
+					imageUrl="{base}/rust_ebpf.png"
+					altText="Rust and eBPF logo"
 				/>
 			</div>
 		</div>
@@ -187,21 +117,8 @@
 	@tailwind components;
 	@tailwind utilities;
 
-	canvas {
-		display: block;
-		width: 100%;
-		height: 22vh;
-	}
-
-	.canvas-wrapper {
-		box-shadow:
-			0 4px 8px 0 rgba(0, 0, 0, 0.2),
-			0 4px 8px 0 rgba(0, 0, 0, 0.2);
-		background: linear-gradient(to right top, rgba(213, 213, 213, 0.2), rgba(67, 102, 108, 0.4));
-	}
-
 	.intro {
-		background: linear-gradient(to right top, rgba(255, 165, 0, 0.2), rgba(31, 108, 120, 0.4));
+		background: linear-gradient(to right top, rgba(255, 165, 0, 0.3), rgba(31, 108, 120, 0.5));
 
 		box-shadow:
 			0 4px 8px 0 rgba(0, 0, 0, 0.2),
@@ -212,5 +129,22 @@
 		box-shadow:
 			0 4px 8px 0 rgba(0, 0, 0, 0.2),
 			0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	.skill-wrapper {
+		background: linear-gradient(to right top, rgba(255, 165, 0, 0.3), rgba(31, 108, 120, 0.5));
+		box-shadow:
+			0 4px 8px 0 rgba(0, 0, 0, 0.2),
+			0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	}
+
+	.projects-section {
+		column-count: 2;
+		column-gap: 1.5rem;
+	}
+
+	.project-card {
+		break-inside: avoid;
+		margin-bottom: 1.5rem;
 	}
 </style>

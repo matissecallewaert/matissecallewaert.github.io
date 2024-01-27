@@ -14,17 +14,17 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter({
 			pages: 'docs',
-			assets: 'docs',
+			assets: 'docs'
 		}),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
-		  },
+			base: process.env.NODE_ENV === 'production' ? '/portfolio' : ''
+		}
 	},
 	preprocess: [
 		preprocess({
-		  postcss: true,
-		}),
-	  ],
+			postcss: true
+		})
+	]
 };
 
 export default config;
