@@ -1,13 +1,9 @@
 <script>
-	import Header from './Header.svelte';
-
 	let currentDate = new Date();
 	let currentYear = currentDate.getFullYear();
 </script>
 
 <div class="app">
-	<Header />
-
 	<main>
 		<slot />
 	</main>

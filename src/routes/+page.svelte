@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Portfolio</title>
 	<meta name="description" content="Portfolio of Matisse Callewaert" />
 </svelte:head>
 
@@ -15,17 +15,17 @@
 			<div class="intro p-8 rounded-xl items-center justify-center">
 				<h1 class="text-4xl font-bold text-gray-700">Hey, I’m Matisse Callewaert</h1>
 				<p class="mt-4 text-gray-700">
-					I am a software developer based in Belgium, holding a master's degree in Information
+					I am a software developer based in Belgium, getting a master's degree in Information
 					Technology from the University of Ghent. Throughout my academic journey, I worked at a
 					WaaS company and undertook an internship at a consultancy, gaining valuable practical
 					experience. Driven by a passion for continuous learning and exploration, I thrive on
-					delving into coding projects with my colleagues to unleash our creativity. Outside the
-					world of technology, I find joy in sports and collaborative coding endeavors that allow us
-					to push the boundaries of our imagination.
+					delving into coding projects with my peers to unleash our creativity. Outside the world of
+					technology, I find joy in sports and collaborative coding endeavors that allow us to push
+					the boundaries of our imagination.
 				</p>
 				<div class="flex items-center space-x-2 mt-8">
 					<a
-						href="#"
+						href="mailto:matisse.callewaert@gmail.com"
 						class="bg-gray-700 text-white px-4 py-2 rounded-full hover:bg-gray-800 flex items-center transition duration-500 ease-in-out transform hover:scale-105"
 						>Contact me</a
 					>
