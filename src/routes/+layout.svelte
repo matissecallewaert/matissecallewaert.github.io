@@ -14,7 +14,7 @@
 </div>
 
 <style>
-	.app {
+	:root {
 		background-color: #f5f5f5;
 	}
 </style>

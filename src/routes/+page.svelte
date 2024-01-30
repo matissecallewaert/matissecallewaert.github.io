@@ -10,8 +10,8 @@
 </svelte:head>
 
 <main class="px-8">
-	<section class="mt-6 flex space-x-6 items-center justify-center" style="align-items: stretch">
-		<div class="flex-col">
+	<section class="mt-6 flex flex-col lg:flex-row items-center justify-center">
+		<div class="order-2 lg:order-1">
 			<div class="intro p-8 rounded-xl items-center justify-center">
 				<h1 class="text-4xl font-bold text-gray-700">Hey, I’m Matisse Callewaert</h1>
 				<p class="mt-4 text-gray-700">
@@ -56,7 +56,7 @@
 				/>
 			</div>
 		</div>
-		<div>
+		<div class="order-1 lg:order-2 image-wrapper">
 			<img
 				src={`${base}/me.jpg`}
 				alt="Matisse smiling, standing next to a river with historical buildings and trees in the background"
@@ -68,44 +68,54 @@
 	<section class="mt-10">
 		<h3 class="text-3xl font-bold text-gray-700">My Projects</h3>
 		<div class="gap-6 mt-6 projects-section">
-			<div class="project-card left">
+			<div class="project-card">
 				<ProjectCard
 					title="Sales2Cash"
 					description="A WaaS solution enabling businesses to track invoices and optimize their cash flow managment."
 					imageUrl="{base}/sales2cash.png"
 					altText="Sales2Cash banner"
+					color="#8a9dfb"
+					headerColor="#778dfb"
 				/>
 			</div>
-			<div class="project-card right">
+			<div class="project-card">
 				<ProjectCard
 					title="Faction Game"
 					description="A programmer-centric game where you program your custom decision logic to compete for total faction dominance."
 					imageUrl="{base}/faction.png"
 					altText="faction game world map"
+					color="#ffd5a2"
+					headerColor="#fcad76"
 				/>
 			</div>
-			<div class="project-card right">
+			<div class="project-card">
 				<ProjectCard
 					title="Simpel music player app"
 					description="A straightforward music player app built with Kotlin in android studio."
 					imageUrl="{base}/music_player_small.jpg"
 					altText="Screenshot of the music player app"
+					color="#f3f3f3"
+					headerColor="#d9d9d9"
 				/>
 			</div>
-			<div class="project-card left">
+			<div class="project-card">
 				<ProjectCard
 					title="NulVision"
 					description="A web app to detect and identify objects in drone images. I worked on the backend and the integration of the machine learning model."
 					imageUrl="{base}/nulvision.png"
 					altText="Screenshot of the NulVision web app"
+					color="#f3f3f3"
+					headerColor="#d9d9d9"
 				/>
 			</div>
-			<div class="project-card left">
+			<div class="project-card">
 				<ProjectCard
 					title="Master thesis"
 					description="A tool for extracting features in network intrusion detection systems using EBPF and Rust."
 					imageUrl="{base}/rust_ebpf.png"
 					altText="Rust and eBPF logo"
+					color="#98ea8b"
+					headerColor="#89d97e"
 				/>
 			</div>
 		</div>
@@ -118,7 +128,7 @@
 	@tailwind utilities;
 
 	.intro {
-		background: linear-gradient(to right top, rgba(255, 165, 0, 0.3), rgba(31, 108, 120, 0.5));
+		background: linear-gradient(to right top, rgba(255, 123, 0, 0.2), rgba(47, 145, 184, 0.9));
 
 		box-shadow:
 			0 4px 8px 0 rgba(0, 0, 0, 0.2),
@@ -132,7 +142,7 @@
 	}
 
 	.skill-wrapper {
-		background: linear-gradient(to right top, rgba(255, 165, 0, 0.3), rgba(31, 108, 120, 0.5));
+		background-color: #eeeef0;
 		box-shadow:
 			0 4px 8px 0 rgba(0, 0, 0, 0.2),
 			0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -146,5 +156,47 @@
 	.project-card {
 		break-inside: avoid;
 		margin-bottom: 1.5rem;
+	}
+
+	@media (min-width: 1024px) {
+		.projects-section {
+			column-count: 2;
+			column-gap: 1.5rem;
+		}
+		.intro {
+			margin-top: 0;
+			margin-right: 1.5rem;
+		}
+		.skill-wrapper {
+			margin-right: 1.5rem;
+		}
+	}
+
+	@media (max-width: 1023px) {
+		.intro {
+			margin-top: 1.5rem;
+		}
+		.intro,
+		.skill-wrapper,
+		.image-class {
+			width: 80vw;
+		}
+		.image-wrapper {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.projects-section {
+			column-count: 1;
+		}
+		.project-card {
+			width: 100%;
+		}
+		.intro {
+			margin-top: 1.5rem;
+		}
 	}
 </style>
