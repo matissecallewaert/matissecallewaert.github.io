@@ -9,12 +9,13 @@
 	</main>
 
 	<footer class="px-8 py-4 mt-8">
-		<div class="text-center text-gray-700">© {currentYear} Portfolio of Matisse Callewaert</div>
+		<div class="text-center">© {currentYear} Portfolio of Matisse Callewaert</div>
 	</footer>
 </div>
 
 <style>
 	:root {
-		background-color: #f5f5f5;
+		color: white;
+		background-color: #121212;
 	}
 </style>

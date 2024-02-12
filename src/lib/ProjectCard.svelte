@@ -7,11 +7,10 @@
 	export let headerColor: string;
 </script>
 
-<div class="p-6 rounded-xl card" style="background:{color}">
+<div class="rounded-xl card">
 	<div class="card-inner">
 		<div
 			class="p-3 rounded-t-xl"
-			style="margin:-1.5rem -1.5rem 0 -1.5rem; background: {headerColor}"
 		>
 			<h3 class="text-xl font-semibold text-black-900">{title}</h3>
 			<p class="text-black-900">{description}</p>
@@ -23,19 +22,43 @@
 </div>
 
 <style>
+	
 	.card {
-		transition: all 0.2s;
+		color: white;
 		position: relative;
-		cursor: pointer;
-		box-shadow:
-			0 4px 8px 0 rgba(0, 0, 0, 0.2),
-			0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		transition: all 0.2s;
+		box-shadow: 0 25px 50px rgba(0,0,0,0.55);
 	}
 
-	.card-inner {
+	.card::before,
+	.card::after {
+		content: "";
+		background-color: #304155;
+		position: absolute;
+	}
+
+	.card::before {
+		border-radius: 50%;
+		width: 10rem;
+		height: 10rem;
+		top: 30%;
+		right: 14%;
+	}
+
+	.card::after {
+		content: "";
+		position: absolute;
+	}
+
+	.card .card-inner {
 		width: inherit;
 		height: inherit;
-		border-radius: 8px;
+		background-color: rgba(255, 255, 255, 0.074);
+		-webkit-backdrop-filter: blur(100px);
+		backdrop-filter: blur(80px);
+		border-radius: 1rem;
+		transition: all ease 0.3s;
+		padding: 1rem;
 	}
 
 	.card:hover {

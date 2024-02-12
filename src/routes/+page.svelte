@@ -13,8 +13,8 @@
 	<section class="mt-6 flex flex-col lg:flex-row items-center justify-center">
 		<div class="order-2 lg:order-1">
 			<div class="intro p-8 rounded-xl items-center justify-center">
-				<h1 class="text-4xl font-bold text-gray-700">Hey, I’m Matisse Callewaert</h1>
-				<p class="mt-4 text-gray-700">
+				<h1 class="text-4xl font-bold">Hey, I’m Matisse Callewaert</h1>
+				<p class="mt-4">
 					I am a software developer based in Belgium, getting a master's degree in Information
 					Technology from the University of Ghent. Throughout my academic journey, I worked at a
 					WaaS company and undertook an internship at a consultancy, gaining valuable practical
@@ -66,38 +66,8 @@
 	</section>
 
 	<section class="mt-10">
-		<h3 class="text-3xl font-bold text-gray-700">My Projects</h3>
+		<h3 class="text-3xl font-bold" style="color: white">My Projects</h3>
 		<div class="gap-6 mt-6 projects-section">
-			<div class="project-card">
-				<ProjectCard
-					title="Sales2Cash"
-					description="A WaaS solution enabling businesses to track invoices and optimize their cash flow managment."
-					imageUrl="{base}/sales2cash.png"
-					altText="Sales2Cash banner"
-					color="#8a9dfb"
-					headerColor="#778dfb"
-				/>
-			</div>
-			<div class="project-card">
-				<ProjectCard
-					title="Faction Game"
-					description="A programmer-centric game where you program your custom decision logic to compete for total faction dominance."
-					imageUrl="{base}/faction.png"
-					altText="faction game world map"
-					color="#ffd5a2"
-					headerColor="#fcad76"
-				/>
-			</div>
-			<div class="project-card">
-				<ProjectCard
-					title="Simpel music player app"
-					description="A straightforward music player app built with Kotlin in android studio."
-					imageUrl="{base}/music_player_small.jpg"
-					altText="Screenshot of the music player app"
-					color="#f3f3f3"
-					headerColor="#d9d9d9"
-				/>
-			</div>
 			<div class="project-card">
 				<ProjectCard
 					title="NulVision"
@@ -110,12 +80,33 @@
 			</div>
 			<div class="project-card">
 				<ProjectCard
+					title="Sales2Cash"
+					description="A WaaS solution enabling businesses to track invoices and optimize their cash flow managment."
+					imageUrl="{base}/sales2cash.png"
+					altText="Sales2Cash banner"
+					color="#22577A"
+					headerColor="#22577A"
+				/>
+			</div>
+			
+			<div class="project-card">
+				<ProjectCard
 					title="Master thesis"
 					description="A tool for extracting features in network intrusion detection systems using EBPF and Rust."
 					imageUrl="{base}/rust_ebpf.png"
 					altText="Rust and eBPF logo"
 					color="#98ea8b"
 					headerColor="#89d97e"
+				/>
+			</div>
+			<div class="project-card">
+				<ProjectCard
+					title="Faction Game"
+					description="A programmer-centric game where you program your custom decision logic to compete for total faction dominance."
+					imageUrl="{base}/faction.png"
+					altText="faction game world map"
+					color="#ffd5a2"
+					headerColor="#fcad76"
 				/>
 			</div>
 		</div>
@@ -128,11 +119,10 @@
 	@tailwind utilities;
 
 	.intro {
-		background: linear-gradient(to right top, rgba(255, 123, 0, 0.2), rgba(47, 145, 184, 0.9));
+		color: #fff;
+		background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
 
-		box-shadow:
-			0 4px 8px 0 rgba(0, 0, 0, 0.2),
-			0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		box-shadow: 0 25px 50px rgba(0,0,0,0.55);
 	}
 
 	.image-class {
@@ -142,10 +132,8 @@
 	}
 
 	.skill-wrapper {
-		background-color: #eeeef0;
-		box-shadow:
-			0 4px 8px 0 rgba(0, 0, 0, 0.2),
-			0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
+		box-shadow: 0 25px 50px rgba(0,0,0,0.55);
 	}
 
 	.projects-section {
