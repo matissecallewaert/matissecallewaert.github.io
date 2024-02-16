@@ -10,7 +10,7 @@
 </svelte:head>
 
 <main class="px-8">
-	<section class="mt-6 flex flex-col lg:flex-row items-center justify-center">
+	<section class="mt-6 flex flex-col lg:flex-row items-center justify-center intro-section">
 		<div class="order-2 lg:order-1">
 			<div class="intro p-8 rounded-xl items-center justify-center">
 				<h1 class="text-4xl font-bold">Hey, I’m Matisse Callewaert</h1>
@@ -23,32 +23,23 @@
 					technology, I find joy in sports and collaborative coding endeavors that allow us to push
 					the boundaries of our imagination.
 				</p>
-				<div class="flex items-center space-x-2 mt-8">
-					<a
-						href="mailto:matisse.callewaert@gmail.com"
-						class="bg-gray-700 text-white px-4 py-2 rounded-full hover:bg-gray-800 flex items-center transition duration-500 ease-in-out transform hover:scale-105"
-						>Contact me</a
-					>
+				<div class="flex items-center space-x-4 mt-8">
+					<a href="mailto:matisse.callewaert@gmail.com">Contact me</a>
 
-					<a
-						href="https://github.com/matissecallewaert"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="bg-gray-700 text-white rounded-full flex items-center justify-center h-10 w-10 hover:bg-gray-800 transition duration-500 ease-in-out transform hover:scale-105"
-					>
+					<a href="https://github.com/matissecallewaert" target="_blank" rel="noopener noreferrer">
 						<i class="fab fa-github" />
 					</a>
 					<a
 						href="https://www.linkedin.com/in/matisse-callewaert-a32248269"
 						target="_blank"
 						rel="noopener noreferrer"
-						class="bg-gray-700 text-white rounded-full flex items-center justify-center h-10 w-10 hover:bg-gray-800 transition duration-500 ease-in-out transform hover:scale-105"
 					>
 						<i class="fab fa-linkedin-in" />
 					</a>
 				</div>
 			</div>
-			<div class="w-auto h-auto mt-8 rounded-xl skill-wrapper">
+			<h3 class="text-3xl font-bold mt-10" style="color: white">My Skills</h3>
+			<div class="w-auto h-auto mt-6 rounded-xl skill-wrapper">
 				<img
 					src="https://skillicons.dev/icons?i=git,ts,react,prisma,mysql,nodejs,docker,kotlin,androidstudio,rust,bash,cs,dotnet,aws,azure,angular,postgresql,gitlab,js,py,tensorflow,cpp,postman,java,md,rabbitmq,sentry,svelte,tailwind"
 					alt="skill icons"
@@ -78,37 +69,43 @@
 					headerColor="#d9d9d9"
 				/>
 			</div>
-			<div class="project-card">
-				<ProjectCard
-					title="Sales2Cash"
-					description="A WaaS solution enabling businesses to track invoices and optimize their cash flow managment."
-					imageUrl="{base}/sales2cash.png"
-					altText="Sales2Cash banner"
-					color="#22577A"
-					headerColor="#22577A"
-				/>
-			</div>
-			
-			<div class="project-card">
-				<ProjectCard
-					title="Master thesis"
-					description="A tool for extracting features in network intrusion detection systems using EBPF and Rust."
-					imageUrl="{base}/rust_ebpf.png"
-					altText="Rust and eBPF logo"
-					color="#98ea8b"
-					headerColor="#89d97e"
-				/>
-			</div>
-			<div class="project-card">
-				<ProjectCard
-					title="Faction Game"
-					description="A programmer-centric game where you program your custom decision logic to compete for total faction dominance."
-					imageUrl="{base}/faction.png"
-					altText="faction game world map"
-					color="#ffd5a2"
-					headerColor="#fcad76"
-				/>
-			</div>
+
+			<a href="https://www.alternatiefbv.be/" target="_blank">
+				<div class="project-card">
+					<ProjectCard
+						title="Sales2Cash"
+						description="A WaaS solution enabling businesses to track invoices and optimize their cash flow managment."
+						imageUrl="{base}/sales2cash.png"
+						altText="Sales2Cash banner"
+						color="#22577A"
+						headerColor="#22577A"
+					/>
+				</div>
+			</a>
+			<a href="https://github.com/matissecallewaert/nids-feature-extraction-tool" target="_blank">
+				<div class="project-card">
+					<ProjectCard
+						title="Master thesis"
+						description="A tool for extracting features in network intrusion detection systems using EBPF and Rust."
+						imageUrl="{base}/rust_ebpf.png"
+						altText="Rust and eBPF logo"
+						color="#98ea8b"
+						headerColor="#89d97e"
+					/>
+				</div>
+			</a>
+			<a href="https://github.com/matissecallewaert/faction-game-backend" target="_blank">
+				<div class="project-card">
+					<ProjectCard
+						title="Faction Game"
+						description="A programmer-centric game where you program your custom decision logic to compete for total faction dominance."
+						imageUrl="{base}/faction.png"
+						altText="faction game world map"
+						color="#ffd5a2"
+						headerColor="#fcad76"
+					/>
+				</div>
+			</a>
 		</div>
 	</section>
 </main>
@@ -122,7 +119,7 @@
 		color: #fff;
 		background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
 
-		box-shadow: 0 25px 50px rgba(0,0,0,0.55);
+		box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
 	}
 
 	.image-class {
@@ -133,7 +130,7 @@
 
 	.skill-wrapper {
 		background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
-		box-shadow: 0 25px 50px rgba(0,0,0,0.55);
+		box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
 	}
 
 	.projects-section {
@@ -144,6 +141,39 @@
 	.project-card {
 		break-inside: avoid;
 		margin-bottom: 1.5rem;
+	}
+
+	.intro-section a {
+		--hover-shadows: 16px 16px 33px #121212, -16px -16px 33px #303030;
+		--accent: white;
+		font-weight: bold;
+		letter-spacing: 0.1em;
+		border: none;
+		border-radius: 1.1em;
+		background-color: #121212;
+		cursor: pointer;
+		color: white;
+		padding: 0.8em 1.5em;
+		transition:
+			box-shadow ease-in-out 0.3s,
+			background-color ease-in-out 0.1s,
+			letter-spacing ease-in-out 0.1s,
+			transform ease-in-out 0.1s;
+		box-shadow:
+			13px 13px 10px #1c1c1c,
+			-13px -13px 10px #262626;
+	}
+
+	.intro-section a:hover {
+		box-shadow: var(--hover-shadows);
+	}
+
+	.intro-section a:active {
+		box-shadow:
+			var(--hover-shadows),
+			var(--accent) 0px 0px 30px 5px;
+		background-color: var(--accent);
+		transform: scale(0.95);
 	}
 
 	@media (min-width: 1024px) {

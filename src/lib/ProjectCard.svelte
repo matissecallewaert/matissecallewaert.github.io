@@ -9,9 +9,7 @@
 
 <div class="rounded-xl card">
 	<div class="card-inner">
-		<div
-			class="p-3 rounded-t-xl"
-		>
+		<div class="p-3 rounded-t-xl">
 			<h3 class="text-xl font-semibold text-black-900">{title}</h3>
 			<p class="text-black-900">{description}</p>
 		</div>
@@ -22,18 +20,17 @@
 </div>
 
 <style>
-	
 	.card {
 		color: white;
 		position: relative;
 		transition: all 0.2s;
-		box-shadow: 0 25px 50px rgba(0,0,0,0.55);
+		box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
 	}
 
 	.card::before,
 	.card::after {
-		content: "";
-		background-color: #304155;
+		content: '';
+		background-color: #fab5704c;
 		position: absolute;
 	}
 
@@ -46,7 +43,7 @@
 	}
 
 	.card::after {
-		content: "";
+		content: '';
 		position: absolute;
 	}
 
@@ -62,7 +59,7 @@
 	}
 
 	.card:hover {
-		transform: scale(1.04) rotate(1deg);
+		transform: scale(1.04) rotate(0.2deg);
 		transition: transform 0.5s;
 	}
 </style>
