@@ -10,11 +10,11 @@
 </svelte:head>
 
 <main class="px-8">
-	<section class="mt-6 flex flex-col lg:flex-row items-center justify-center intro-section">
+	<section class="mt-6 flex flex-col intro-section">
 		<div class="order-2 lg:order-1">
 			<div class="intro p-8 rounded-xl items-center justify-center">
 				<h1 class="text-4xl font-bold">Hey, I’m Matisse Callewaert</h1>
-				<p class="mt-4">
+				<p class="mt-8">
 					I am a software developer based in Belgium, getting a master's degree in Information
 					Technology from the University of Ghent. Throughout my academic journey, I worked at a
 					WaaS company and undertook an internship at a consultancy, gaining valuable practical
@@ -38,14 +38,6 @@
 					</a>
 				</div>
 			</div>
-			<h3 class="text-3xl font-bold mt-10" style="color: white">My Skills</h3>
-			<div class="w-auto h-auto mt-6 rounded-xl skill-wrapper">
-				<img
-					src="https://skillicons.dev/icons?i=git,ts,react,prisma,mysql,nodejs,docker,kotlin,androidstudio,rust,bash,cs,dotnet,aws,azure,angular,postgresql,gitlab,js,py,tensorflow,cpp,postman,java,md,rabbitmq,sentry,svelte,tailwind"
-					alt="skill icons"
-					class="rounded-xl p-10"
-				/>
-			</div>
 		</div>
 		<div class="order-1 lg:order-2 image-wrapper">
 			<img
@@ -55,6 +47,15 @@
 			/>
 		</div>
 	</section>
+
+	<h3 class="text-3xl font-bold mt-10" style="color: white">My Skills</h3>
+	<div class="mt-6 rounded-xl skill-wrapper">
+		<img
+			src="https://skillicons.dev/icons?i=git,ts,react,prisma,mysql,nodejs,docker,kotlin,androidstudio,rust,bash,cs,dotnet,aws,azure,angular,postgresql,gitlab,js,py,tensorflow,cpp,postman,java,md,rabbitmq,sentry,svelte,tailwind"
+			alt="skill icons"
+			class="rounded-xl p-6"
+		/>
+	</div>
 
 	<section class="mt-10">
 		<h3 class="text-3xl font-bold" style="color: white">My Projects</h3>
@@ -86,7 +87,7 @@
 				<div class="project-card">
 					<ProjectCard
 						title="Master thesis"
-						description="A tool for extracting features in network intrusion detection systems using EBPF and Rust."
+						description="A tool for extracting features in network intrusion detection systems using eBPF and Rust."
 						imageUrl="{base}/rust_ebpf.png"
 						altText="Rust and eBPF logo"
 						color="#98ea8b"
@@ -120,15 +121,31 @@
 		background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
 
 		box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: first baseline;
+	}
+
+	.intro-section {
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
 	}
 
 	.image-class {
 		box-shadow:
 			0 4px 8px 0 rgba(0, 0, 0, 0.2),
 			0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
 	}
 
 	.skill-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
 		box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
 	}
@@ -185,9 +202,6 @@
 			margin-top: 0;
 			margin-right: 1.5rem;
 		}
-		.skill-wrapper {
-			margin-right: 1.5rem;
-		}
 	}
 
 	@media (max-width: 1023px) {
@@ -195,13 +209,16 @@
 			margin-top: 1.5rem;
 		}
 		.intro,
-		.skill-wrapper,
 		.image-class {
 			width: 80vw;
 		}
 		.image-wrapper {
 			display: flex;
 			justify-content: center;
+			align-items: center;
+		}
+		.intro-section {
+			flex-direction: column;
 			align-items: center;
 		}
 	}
