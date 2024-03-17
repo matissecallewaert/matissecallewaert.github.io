@@ -107,6 +107,18 @@
 					/>
 				</div>
 			</a>
+			<a href="https://matissecallewaert.github.io/ai-tetris/" target="_blank">
+				<div class="project-card">
+					<ProjectCard
+						title="Tetris AI"
+						description="A tetris AI that uses a genetic algorithm to learn how to play the game."
+						imageUrl="{base}/tetris-ai.png"
+						altText="tetris game"
+						color="#ffd5a2"
+						headerColor="#fcad76"
+					/>
+				</div>
+			</a>
 		</div>
 	</section>
 </main>
