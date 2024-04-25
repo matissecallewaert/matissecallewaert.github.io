@@ -60,6 +60,18 @@
 	<section class="mt-10">
 		<h3 class="text-3xl font-bold" style="color: white">My Projects</h3>
 		<div class="gap-6 mt-6 projects-section">
+			<a href="https://github.com/matissecallewaert/RustiFlow" target="_blank">
+				<div class="project-card">
+					<ProjectCard
+						title="RustiFlow"
+						description="A tool for extracting features in network intrusion detection systems using eBPF and Rust."
+						imageUrl="{base}/RustiFlow.png"
+						altText="Rust and eBPF logo"
+						color="#98ea8b"
+						headerColor="#89d97e"
+					/>
+				</div>
+			</a>
 			<div class="project-card">
 				<ProjectCard
 					title="NulVision"
@@ -80,18 +92,6 @@
 						altText="Sales2Cash banner"
 						color="#22577A"
 						headerColor="#22577A"
-					/>
-				</div>
-			</a>
-			<a href="https://github.com/matissecallewaert/nids-feature-extraction-tool" target="_blank">
-				<div class="project-card">
-					<ProjectCard
-						title="Master thesis"
-						description="A tool for extracting features in network intrusion detection systems using eBPF and Rust."
-						imageUrl="{base}/rust_ebpf.png"
-						altText="Rust and eBPF logo"
-						color="#98ea8b"
-						headerColor="#89d97e"
 					/>
 				</div>
 			</a>
