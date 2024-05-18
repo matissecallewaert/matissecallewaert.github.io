@@ -20,8 +20,8 @@
 					WaaS company and undertook an internship at a consultancy, gaining valuable practical
 					experience. Driven by a passion for continuous learning and exploration, I thrive on
 					delving into coding projects with my peers to unleash our creativity. Outside the world of
-					technology, I find joy in sports and collaborative coding endeavors that allow us to push
-					the boundaries of our imagination.
+					University and work, I find joy in sports and collaborative coding endeavors that allow us
+					to push the boundaries of our imagination.
 				</p>
 				<div class="flex items-center space-x-4 mt-8">
 					<a href="mailto:matisse.callewaert@gmail.com">Contact me</a>
@@ -82,7 +82,6 @@
 					headerColor="#d9d9d9"
 				/>
 			</div>
-
 			<a href="https://www.alternatiefbv.be/" target="_blank">
 				<div class="project-card">
 					<ProjectCard
@@ -95,15 +94,15 @@
 					/>
 				</div>
 			</a>
-			<a href="https://github.com/matissecallewaert/faction-game-backend" target="_blank">
+			<a href="https://github.com/matissecallewaert/bashbuddy" target="_blank">
 				<div class="project-card">
 					<ProjectCard
-						title="Faction Game"
-						description="A programmer-centric game where you program your custom decision logic to compete for total faction dominance."
-						imageUrl="{base}/faction.png"
-						altText="faction game world map"
-						color="#ffd5a2"
-						headerColor="#fcad76"
+						title="BashBuddy"
+						description="A tool to keep track of your commands by categorizing them and giving them aliases."
+						imageUrl="{base}/bashbuddy.png"
+						altText="Rust and eBPF logo"
+						color="#98ea8b"
+						headerColor="#89d97e"
 					/>
 				</div>
 			</a>
@@ -114,6 +113,18 @@
 						description="A tetris AI that uses a genetic algorithm to learn how to play the game."
 						imageUrl="{base}/tetris-ai.png"
 						altText="tetris game"
+						color="#ffd5a2"
+						headerColor="#fcad76"
+					/>
+				</div>
+			</a>
+			<a href="https://github.com/matissecallewaert/faction-game-backend" target="_blank">
+				<div class="project-card">
+					<ProjectCard
+						title="Faction Game"
+						description="A programmer-centric game where you program your custom decision logic to compete for total faction dominance."
+						imageUrl="{base}/faction.png"
+						altText="faction game world map"
 						color="#ffd5a2"
 						headerColor="#fcad76"
 					/>
