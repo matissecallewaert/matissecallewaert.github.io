@@ -2,6 +2,7 @@
 	import ProjectCard from '$lib/ProjectCard.svelte';
 	import '@fortawesome/fontawesome-free/css/all.css';
 	import { base } from '$app/paths';
+	import ChangingWord from '$lib/ChangingWord.svelte';
 </script>
 
 <svelte:head>
@@ -48,16 +49,11 @@
 		</div>
 	</section>
 
-	<h3 class="text-3xl font-bold mt-10" style="color: white">My Skills</h3>
 	<div class="mt-6 rounded-xl skill-wrapper">
-		<img
-			src="https://skillicons.dev/icons?i=git,ts,react,prisma,mysql,nodejs,docker,kotlin,androidstudio,rust,bash,cs,dotnet,aws,azure,angular,postgresql,gitlab,js,py,tensorflow,cpp,postman,java,md,rabbitmq,sentry,svelte,tailwind"
-			alt="skill icons"
-			class="rounded-xl p-6"
-		/>
+		<ChangingWord></ChangingWord>
 	</div>
 
-	<section class="mt-10">
+	<section class="mt-">
 		<h3 class="text-3xl font-bold" style="color: white">My Projects</h3>
 		<div class="gap-6 mt-6 projects-section">
 			<a href="https://github.com/matissecallewaert/RustiFlow" target="_blank">
@@ -169,8 +165,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		background: linear-gradient(170deg, rgba(58, 56, 56, 0.623) 0%, rgb(31, 31, 31) 100%);
-		box-shadow: 0 25px 50px rgba(0, 0, 0, 0.55);
+		min-height: 3rem;
 	}
 
 	.projects-section {
