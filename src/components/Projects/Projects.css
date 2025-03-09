@@ -1,0 +1,25 @@
+.projects {
+  grid-column: 1 / 7;
+  grid-row: 1 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.projects a {
+  color: #2cbe4e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.projects a:hover {
+  text-decoration: underline;
+}
+
+/* Menu bar for Projects component */
+.menu-bar {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.8rem;
+}
