@@ -1,6 +1,4 @@
 .links {
-  grid-column: 7 / 13;
-  grid-row: 2;
   border-radius: 12px;
   overflow: hidden;
 }

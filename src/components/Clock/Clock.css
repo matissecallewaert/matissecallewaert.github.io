@@ -1,0 +1,10 @@
+.clock {
+    font-family: 'Minecraft';
+    font-size: 48px;
+    color: white; /* Dark gray color */
+}
+
+.clock-window {
+    border-radius: 12px;
+    overflow: hidden;
+  }

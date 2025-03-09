@@ -3,29 +3,21 @@ import Header from "./components/Header/Header";
 import AboutMe from "./components/AboutMe/AboutMe";
 import Projects from "./components/Projects/Projects";
 import Links from "./components/Links/Links";
-import OfficeHours from "./components/OfficeHours/OfficeHours";
+import RustiFlow from "./components/RustiFlow/RustiFlow";
+import BashBuddy from "./components/BashBuddy/BashBuddy";
+import Clock from "./components/Clock/Clock";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <div className="column-container">
-        <div className="column">
-          <div className="column-item">
-            <Projects />
-          </div>
-          <div className="column-item">
-            <OfficeHours />
-          </div>
-        </div>
-        <div className="column">
-          <div className="column-item">
-            <AboutMe />
-          </div>
-          <div className="column-item">
-            <Links />
-          </div>
-        </div>
+      <div className="components-container">
+        <Links />
+        <Clock />
+        <BashBuddy />
+        <RustiFlow />
+        <AboutMe />
+        <Projects />
       </div>
     </div>
   );

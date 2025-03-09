@@ -5,11 +5,11 @@ const Header = () => {
   return (
     <header className="header">
       <a href="/" className="logo">
-        MATISSE
+        MATISSE CALLEWAERT
       </a>
       <div className="nav-links">
         <a href="/cv" className="nav-link">
-          READ.CV
+          CV
         </a>
       </div>
     </header>

@@ -4,37 +4,110 @@ import "./Projects.css";
 
 const Projects = () => {
   return (
-    <Window title="DESIGN.CC" className="projects">
+    <Window title="MATISSE CALLEWAERT" className="projects">
       <h3>Stuff I've done</h3>
       <p>
-        During daylight hours I work on climate at{" "}
-        <a href="https://stripe.com/climate">Stripe</a> and{" "}
-        <a href="https://frontierclimate.com/">Frontier</a>.
+        I've always loved solving problems and building cool things. I started
+        with a master's in information theory and am now finishing my second in
+        computer engineering. Along the way, I gained hands-on experience
+        through internships at{" "}
+        <a href="https://we-are.be" target="_blank" rel="noopener noreferrer">
+          We Are
+        </a>
+        , where I worked with modern tech stacks and real-world software
+        development.
       </p>
       <p>
-        In previous lives I've led design at{" "}
-        <a href="https://carbondirect.com">Carbon Direct</a>, designed creator
-        tools at <a href="https://spotify.design/">Spotify</a>, and helped
-        improve core consumer experiences at{" "}
-        <a href="https://airbnb.design/">Airbnb</a> &{" "}
-        <a href="https://doordash.design/">DoorDash</a>.
+        For my thesis projects, I built{" "}
+        <a
+          href="https://github.com/idlab-discover/RustiFlow"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          RustiFlow
+        </a>{" "}
+        at{" "}
+        <a
+          href="https://idlab.technology/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          IDLab
+        </a>
+        , which even led to a published paper, and worked with{" "}
+        <a
+          href="https://www.datameister.ai/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          DataMeister
+        </a>{" "}
+        on using machine learning to clean up 3D meshes. I also worked at{" "}
+        <a
+          href="https://www.alternatief.ai/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Alternatiefbv
+        </a>
+        , a SaaS company focused on invoice management and payment reminders.
       </p>
       <p>
-        On the side, I'm usually either spending time in the great outdoors or
-        working to green the web. I am an alum of the{" "}
-        <a href="#">"Earth 1.0" cohort</a> at The Strange Foundation and I
-        helped build community through <a href="#">Climate Designers</a>.
+        Outside of work, I redesigned a company website with a friend and built
+        personal projects like{" "}
+        <a
+          href="https://github.com/matissecallewaert/ai-tetris"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ai-tetris
+        </a>{" "}
+        (a genetic algorithm for Tetris),
+        <a
+          href="https://github.com/matissecallewaert/bashbuddy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          bashbuddy
+        </a>
+        ,{" "}
+        <a
+          href="https://github.com/matissecallewaert/rshttps"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          rshttp
+        </a>
+        ,{" "}
+        <a
+          href="https://github.com/matissecallewaert/art-portfolio"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          art-portfolio
+        </a>
+        , and a{" "}
+        <a
+          href="https://github.com/matissecallewaert/GUID-generator"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GUID-generator
+        </a>
+        . I also contributed to{" "}
+        <a
+          href="https://github.com/ManuDeBuck/random-image-picker"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          random-image-picker
+        </a>{" "}
+        because I love open-source projects.
       </p>
       <p>
-        On climate, I've been a part of the{" "}
-        <a href="#">solar powered media project</a>. Most recently I wrote a
-        foreword for the book on <a href="#">Sustainable Web Design</a>.
+        Everything I do is about learning, building, and pushing myself further.
+        There's always something new to create!
       </p>
-      <img
-        src="/api/placeholder/80/80"
-        alt="Matisse's avatar"
-        className="avatar"
-      />
     </Window>
   );
 };
