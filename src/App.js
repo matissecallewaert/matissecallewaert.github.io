@@ -1,6 +1,6 @@
 import "./App.css";
 import {
-  BrowserRouter as Router,
+  BrowserRouter as HashRouter,
   Routes,
   Route,
   useLocation,
@@ -93,9 +93,9 @@ const AppContent = () => {
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <AppContent />
-    </Router>
+    </HashRouter>
   );
 }
 export default App;

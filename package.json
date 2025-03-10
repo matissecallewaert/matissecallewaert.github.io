@@ -1,7 +1,8 @@
 {
   "name": "matisse-callewaert-portfolio",
-  "version": "0.1.0",
-  "private": true,
+  "homepage": "https://matissecallewaert.me",
+  "version": "0.2.0",
+  "private": false,
   "dependencies": {
     "@south-paw/typeface-minecraft": "^1.0.0",
     "@testing-library/dom": "^10.4.0",
