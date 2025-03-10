@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import "./Window.css";
 
 let highestZIndex = 10;
@@ -78,7 +78,7 @@ const Window = ({
         windowRef.current.style.top = `${newPosition.y}px`;
       }
     }
-  }, [className]);
+  }, [className, position]);
 
   const bringToFront = () => {
     highestZIndex += 1;
@@ -114,26 +114,27 @@ const Window = ({
     }
   };
 
-  const handleMouseMove = (e) => {
-    if (isDragging && windowRef.current) {
-      const x = e.clientX - dragOffset.x;
-      const y = e.clientY - dragOffset.y;
+  const handleMouseMove = useCallback(
+    (e) => {
+      if (isDragging && windowRef.current) {
+        const x = e.clientX - dragOffset.x;
+        const y = e.clientY - dragOffset.y;
+        windowRef.current.style.left = `${x}px`;
+        windowRef.current.style.top = `${y}px`;
+        setPosition({ x, y });
 
-      windowRef.current.style.left = `${x}px`;
-      windowRef.current.style.top = `${y}px`;
+        localStorage.setItem(
+          `window-position-${className}`,
+          JSON.stringify({ x, y })
+        );
+      }
+    },
+    [isDragging, dragOffset, className]
+  );
 
-      setPosition({ x, y });
-
-      localStorage.setItem(
-        `window-position-${className}`,
-        JSON.stringify({ x, y })
-      );
-    }
-  };
-
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => {
     setIsDragging(false);
-  };
+  }, []);
 
   useEffect(() => {
     if (isDragging) {
@@ -148,7 +149,7 @@ const Window = ({
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [isDragging, dragOffset]);
+  }, [isDragging, handleMouseMove, handleMouseUp]);
 
   const handleClose = (e) => {
     e.stopPropagation();
