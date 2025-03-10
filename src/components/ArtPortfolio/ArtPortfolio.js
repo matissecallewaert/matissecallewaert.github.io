@@ -1,25 +1,25 @@
 import React from "react";
 import Window from "../Window/Window";
-import "./BashBuddy.css";
+import "./ArtPortfolio.css";
 
-const BashBuddy = ({ onClose }) => {
+const ArtPortfolio = ({ onClose }) => {
   return (
     <Window
-      title="https://github.com/matissecallewaert/bashbuddy"
-      className="bashbuddy"
+      title="https://github.com/matissecallewaert/art-portfolio"
+      className="art-portfolio"
       type="browser"
       smallPadding={true}
-      onClose={() => onClose && onClose("bashbuddy")}
+      onClose={() => onClose && onClose("art-portfolio")}
     >
       <div>
         <a
-          href="https://github.com/matissecallewaert/bashbuddy"
+          href="https://github.com/matissecallewaert/art-portfolio"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img
-            src="bashbuddy.png"
-            alt="BashBuddy"
+            src="art-portfolio.png"
+            alt="Art Portfolio"
             style={{
               maxWidth: "100%",
               borderEndStartRadius: "20px",
@@ -32,4 +32,4 @@ const BashBuddy = ({ onClose }) => {
   );
 };
 
-export default BashBuddy;
+export default ArtPortfolio;

@@ -1,0 +1,64 @@
+.vertical-toolbar {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(40, 44, 52, 0.8);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.toolbar-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toolbar-icon:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: scale(1.1);
+}
+
+.toolbar-icon.active {
+  box-shadow: 0 0 5px #4c8eff;
+}
+
+.custom-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: fill;
+  transition: transform 0.2s ease;
+}
+
+/* Animation for when windows are toggled */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.toolbar-icon:active .custom-icon {
+  animation: pulse 0.3s ease;
+}
+
+/* Optional: Add a subtle glow effect for active icons */
+.toolbar-icon.active .custom-icon {
+  filter: drop-shadow(0 0 3px rgba(76, 142, 255, 0.7));
+}

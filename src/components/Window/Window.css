@@ -63,11 +63,43 @@
   background-color: #ff5f57;
 }
 
+.window-circle-red:hover {
+  cursor: pointer;
+  position: relative;
+}
+
+.window-circle-red:hover::after {
+  content: "x";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
+}
+
 .window-circle-yellow {
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background-color: #ffbd2e;
+}
+
+.window-circle-yellow:hover {
+  cursor: pointer;
+  position: relative;
+}
+
+.window-circle-yellow:hover::after {
+  content: "-";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
 }
 
 .window-circle-green {
@@ -146,7 +178,11 @@
 }
 
 /* Ensure no individual component classes override the window size */
-.projects, .links, .aboutMe, .rustiFlow, .bashBuddy .clock-window{
+.projects,
+.links,
+.aboutMe,
+.rustiFlow,
+.bashBuddy .clock-window {
   width: 100%; /* Fill the window container */
   max-width: 100%; /* Don't exceed window width */
 }
@@ -182,4 +218,9 @@
   align-items: center;
   font-size: 1.6rem;
   color: white;
+}
+
+.full-length {
+  width: 60vw;
+  max-width: none !important;
 }

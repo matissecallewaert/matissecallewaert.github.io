@@ -1,25 +1,25 @@
 import React from "react";
 import Window from "../Window/Window";
-import "./BashBuddy.css";
+import "./AITetris.css";
 
-const BashBuddy = ({ onClose }) => {
+const AITetris = ({ onClose }) => {
   return (
     <Window
-      title="https://github.com/matissecallewaert/bashbuddy"
-      className="bashbuddy"
+      title="https://matissecallewaert.github.io/ai-tetris/"
+      className="ai-tetris"
       type="browser"
       smallPadding={true}
-      onClose={() => onClose && onClose("bashbuddy")}
+      onClose={() => onClose && onClose("ai-tetris")}
     >
       <div>
         <a
-          href="https://github.com/matissecallewaert/bashbuddy"
+          href="https://matissecallewaert.github.io/ai-tetris/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img
-            src="bashbuddy.png"
-            alt="BashBuddy"
+            src="ai-tetris.png"
+            alt="AI Tetris"
             style={{
               maxWidth: "100%",
               borderEndStartRadius: "20px",
@@ -32,4 +32,4 @@ const BashBuddy = ({ onClose }) => {
   );
 };
 
-export default BashBuddy;
+export default AITetris;

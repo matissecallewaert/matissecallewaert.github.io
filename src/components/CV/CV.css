@@ -1,0 +1,22 @@
+iframe {
+  width: 100%;
+  height: 95vh;
+  border: none;
+}
+
+.iframe-container {
+  width: 100%;
+  height: 95vh;
+  overflow: hidden;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.cv {
+  border-radius: 12px;
+  overflow: hidden;
+}

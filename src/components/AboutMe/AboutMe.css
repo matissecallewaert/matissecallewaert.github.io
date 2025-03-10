@@ -6,3 +6,12 @@
 strong {
   color: #2cbe4e;
 }
+
+.about-me-content {
+  display: flex;
+}
+
+.me {
+  max-height: 200px;
+  padding: 20px;
+}

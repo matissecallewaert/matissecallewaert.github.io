@@ -2,9 +2,13 @@ import React from "react";
 import Window from "../Window/Window";
 import "./Projects.css";
 
-const Projects = () => {
+const Projects = ({ onClose }) => {
   return (
-    <Window title="MATISSE CALLEWAERT" className="projects">
+    <Window
+      title="MATISSE CALLEWAERT"
+      className="projects"
+      onClose={() => onClose && onClose("projects")}
+    >
       <h3>Stuff I've done</h3>
       <p>
         I've always loved solving problems and building cool things. I started
@@ -86,6 +90,14 @@ const Projects = () => {
         >
           art-portfolio
         </a>
+        ,{" "}
+        <a
+          href="https://github.com/matissecallewaert/gitlab-dashboard"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          gitlab-dashboard
+        </a>
         , and a{" "}
         <a
           href="https://github.com/matissecallewaert/GUID-generator"
@@ -103,10 +115,6 @@ const Projects = () => {
           random-image-picker
         </a>{" "}
         because I love open-source projects.
-      </p>
-      <p>
-        Everything I do is about learning, building, and pushing myself further.
-        There's always something new to create!
       </p>
     </Window>
   );

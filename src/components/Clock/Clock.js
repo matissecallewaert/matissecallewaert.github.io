@@ -3,7 +3,7 @@ import "@south-paw/typeface-minecraft";
 import "./Clock.css";
 import Window from "../Window/Window";
 
-const Clock = () => {
+const Clock = ({ onClose }) => {
   const [time, setTime] = useState(new Date());
 
   useEffect(() => {
@@ -23,7 +23,11 @@ const Clock = () => {
   };
 
   return (
-    <Window title="Clock" className="clock-window">
+    <Window
+      title="Clock"
+      className="clock-window"
+      onClose={() => onClose && onClose("clock-window")}
+    >
       <div className="clock minecraft-dark-gray">{formatTime(time)}</div>
     </Window>
   );
