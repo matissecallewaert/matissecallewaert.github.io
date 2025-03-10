@@ -1,0 +1,17 @@
+.about-me {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+strong {
+  color: #2cbe4e;
+}
+
+.about-me-content {
+  display: flex;
+}
+
+.me {
+  max-height: 200px;
+  padding: 20px;
+}

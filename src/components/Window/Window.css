@@ -1,0 +1,226 @@
+.window {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.2s ease;
+  min-width: 150px; /* Ensure minimum width */
+  max-width: 600px !important; /* Prevent expanding beyond fixed width */
+  /* Height will be determined by content, but you can set fixed height if needed */
+}
+
+.window.dragging {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.window h3 {
+  margin: 0;
+  padding: 10px 15px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.window-content {
+  padding: 15px;
+  background-color: black;
+  color: white;
+  overflow: auto; /* Add scrolling if content is too large */
+  word-break: break-word; /* Ensure text wraps instead of extending the window */
+}
+
+.small-padding {
+  padding: 0px;
+}
+
+.window-header {
+  background-color: #2c2c2c;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  cursor: grab;
+  user-select: none;
+}
+
+.window.dragging .window-header,
+.window.dragging .browser-bar,
+.window.dragging .menu-bar {
+  cursor: grabbing;
+}
+
+.window-controls {
+  display: flex;
+  gap: 5px;
+  margin-right: 15px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.window-circle-red {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ff5f57;
+}
+
+.window-circle-red:hover {
+  cursor: pointer;
+  position: relative;
+}
+
+.window-circle-red:hover::after {
+  content: "x";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.window-circle-yellow {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ffbd2e;
+}
+
+.window-circle-yellow:hover {
+  cursor: pointer;
+  position: relative;
+}
+
+.window-circle-yellow:hover::after {
+  content: "-";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.window-circle-green {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #28c940;
+}
+
+.window-title {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.window-actions {
+  display: flex;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Browser bar styles */
+.browser-bar {
+  background-color: #2c2c2c;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  cursor: grab;
+  user-select: none;
+}
+
+.url-bar {
+  flex-grow: 1;
+  background-color: #1c1c1c;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 0 10px;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.refresh-button {
+  color: white;
+  padding: 0 5px;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Menu bar styles */
+.menu-bar {
+  background-color: #2c2c2c;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  cursor: grab;
+  user-select: none;
+}
+
+.menu-item {
+  color: white;
+  padding: 0 8px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.menu-item:first-of-type {
+  font-weight: bold;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Ensure no individual component classes override the window size */
+.projects,
+.links,
+.aboutMe,
+.rustiFlow,
+.bashBuddy .clock-window {
+  width: 100%; /* Fill the window container */
+  max-width: 100%; /* Don't exceed window width */
+}
+
+/* Browser styling for About Me */
+.browser-bar {
+  background-color: #2c2c2c;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.url-bar {
+  flex-grow: 1;
+  background-color: #484848;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 0 10px;
+  font-size: 0.8rem;
+  text-align: center;
+  color: white;
+}
+
+.refresh-button {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  color: white;
+}
+
+.full-length {
+  width: 60vw;
+  max-width: none !important;
+}

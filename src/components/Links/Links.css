@@ -1,0 +1,23 @@
+.links {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Social Links Styles for Links.js */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+}

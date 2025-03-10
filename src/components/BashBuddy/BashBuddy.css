@@ -1,0 +1,6 @@
+.bashbuddy {
+  grid-column: 8 / 13;
+  grid-row: 3;
+  border-radius: 12px;
+  overflow: hidden;
+}
