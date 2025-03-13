@@ -9,9 +9,44 @@ strong {
 
 .about-me-content {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.image-container {
+  flex-shrink: 0;
+}
+
+.text-container {
+  flex: 1;
 }
 
 .me {
   max-height: 200px;
   padding: 20px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .about-me-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .text-container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .me {
+    max-height: 180px;
+    padding: 10px 0;
+  }
 }

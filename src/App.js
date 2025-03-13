@@ -31,8 +31,24 @@ const AppContent = () => {
     "about-me": true,
     projects: true,
   });
-
+  const [isMobile, setIsMobile] = useState(false);
   const location = useLocation();
+
+  // Check if the device is mobile based on screen width
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768); // Common breakpoint for mobile devices
+    };
+
+    // Initial check
+    checkMobile();
+
+    // Listen for window resize events
+    window.addEventListener("resize", checkMobile);
+
+    // Cleanup event listener
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const savedWindowStates = localStorage.getItem("windowStates");
@@ -46,13 +62,53 @@ const AppContent = () => {
   }, [windows]);
 
   const handleWindowClose = (windowClass) => {
-    setWindows((prevWindows) => ({
-      ...prevWindows,
-      [windowClass]: false,
-    }));
+    if (!isMobile) {
+      setWindows((prevWindows) => ({
+        ...prevWindows,
+        [windowClass]: false,
+      }));
+    }
   };
 
-  const showToolbar = location.pathname !== "/cv";
+  const showToolbar = location.pathname !== "/cv" && !isMobile;
+
+  // Render all windows for mobile regardless of their state
+  const renderMobileWindows = () => {
+    return (
+      <div className="mobile-components-container">
+        <AboutMe />
+        <Projects />
+        <Links />
+        <Clock />
+        <RustiFlow />
+        <BashBuddy />
+        <AITetris />
+        <ArtPortfolio />
+        <GuidGenerator />
+      </div>
+    );
+  };
+
+  // Render desktop windows based on their state
+  const renderDesktopWindows = () => {
+    return (
+      <div className="desktop-components-container">
+        {windows["links"] && <Links onClose={handleWindowClose} />}
+        {windows["clock-window"] && <Clock onClose={handleWindowClose} />}
+        {windows["about-me"] && <AboutMe onClose={handleWindowClose} />}
+        {windows["projects"] && <Projects onClose={handleWindowClose} />}
+        {windows["bashbuddy"] && <BashBuddy onClose={handleWindowClose} />}
+        {windows["rustiflow"] && <RustiFlow onClose={handleWindowClose} />}
+        {windows["art-portfolio"] && (
+          <ArtPortfolio onClose={handleWindowClose} />
+        )}
+        {windows["ai-tetris"] && <AITetris onClose={handleWindowClose} />}
+        {windows["guid-generator"] && (
+          <GuidGenerator onClose={handleWindowClose} />
+        )}
+      </div>
+    );
+  };
 
   return (
     <div className="App">
@@ -60,27 +116,7 @@ const AppContent = () => {
       <Routes>
         <Route
           path="/"
-          element={
-            <div className="components-container">
-              {windows["links"] && <Links onClose={handleWindowClose} />}
-              {windows["clock-window"] && <Clock onClose={handleWindowClose} />}
-              {windows["about-me"] && <AboutMe onClose={handleWindowClose} />}
-              {windows["projects"] && <Projects onClose={handleWindowClose} />}
-              {windows["bashbuddy"] && (
-                <BashBuddy onClose={handleWindowClose} />
-              )}
-              {windows["rustiflow"] && (
-                <RustiFlow onClose={handleWindowClose} />
-              )}
-              {windows["art-portfolio"] && (
-                <ArtPortfolio onClose={handleWindowClose} />
-              )}
-              {windows["ai-tetris"] && <AITetris onClose={handleWindowClose} />}
-              {windows["guid-generator"] && (
-                <GuidGenerator onClose={handleWindowClose} />
-              )}
-            </div>
-          }
+          element={isMobile ? renderMobileWindows() : renderDesktopWindows()}
         />
         <Route path="/cv" element={<CV />} />
       </Routes>
@@ -98,4 +134,5 @@ function App() {
     </HashRouter>
   );
 }
+
 export default App;

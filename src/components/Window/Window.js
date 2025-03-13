@@ -177,18 +177,6 @@ const Window = ({
           <div className="url-bar">{title}</div>
           <div className="refresh-button">↻</div>
         </div>
-      ) : type === "menu" ? (
-        <div className="menu-bar" onMouseDown={handleMouseDown}>
-          <div className="window-controls">
-            <div className="window-circle-red" onClick={handleClose}></div>
-            <div className="window-circle-yellow" onClick={handleClose}></div>
-            <div className="window-circle-green"></div>
-          </div>
-          <div className="menu-item">{title}</div>
-          <div className="menu-item">FILE</div>
-          <div className="menu-item">EDIT</div>
-          <div className="menu-item">OBJECT</div>
-        </div>
       ) : (
         <div className="window-header" onMouseDown={handleMouseDown}>
           <div className="window-controls">

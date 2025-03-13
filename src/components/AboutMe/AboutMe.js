@@ -12,16 +12,21 @@ const AboutMe = ({ onClose }) => {
     >
       <h3>ABOUT ME</h3>
       <div className="about-me-content">
-        <p>
-          I'm an enthusiastic and motivated person who loves learning new things
-          📚, tackling <strong>complex problems</strong>, and working in a{" "}
-          <strong>team</strong> 🤝. I also enjoy staying active and pushing my
-          physical limits 🏋️. Lately, I’ve been focusing on functional training,
-          especially <strong>calisthenics</strong> 🤸, to build real strength
-          and control. Beyond that, I love watching movies 🎬 and series 📺, and
-          I occasionally dive into <strong>video games</strong> 🎮 for fun.
-        </p>
-        <img src="me.jpg" alt="Me" className="me" />
+        <div className="image-container">
+          <img src="me.jpg" alt="Me" className="me" />
+        </div>
+        <div className="text-container">
+          <p>
+            I'm an enthusiastic and motivated person who loves learning new
+            things 📚, tackling <strong>complex problems</strong>, and working
+            in a <strong>team</strong> 🤝. I also enjoy staying active and
+            pushing my physical limits 🏋️. Lately, I've been focusing on
+            functional training, especially <strong>calisthenics</strong> 🤸, to
+            build real strength and control. Beyond that, I love watching movies
+            🎬 and series 📺, and I occasionally dive into{" "}
+            <strong>video games</strong> 🎮 for fun.
+          </p>
+        </div>
       </div>
     </Window>
   );
