@@ -1,0 +1,20 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" fill="#1c1c1c" rx="12"/>
+  <!-- Crab body -->
+  <ellipse cx="32" cy="34" rx="12" ry="10" fill="none" stroke="#2cbe4e" stroke-width="2.5"/>
+  <!-- Eyes -->
+  <circle cx="28" cy="30" r="2" fill="#2cbe4e"/>
+  <circle cx="36" cy="30" r="2" fill="#2cbe4e"/>
+  <!-- Left claw -->
+  <path d="M 20 30 Q 18 28 16 28 Q 14 28 14 30 Q 14 32 16 32 L 20 32" fill="none" stroke="#2cbe4e" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="20" y1="32" x2="22" y2="34" stroke="#2cbe4e" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Right claw -->
+  <path d="M 44 30 Q 46 28 48 28 Q 50 28 50 30 Q 50 32 48 32 L 44 32" fill="none" stroke="#2cbe4e" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="44" y1="32" x2="42" y2="34" stroke="#2cbe4e" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Legs (left side) -->
+  <line x1="24" y1="40" x2="20" y2="46" stroke="#2cbe4e" stroke-width="2" stroke-linecap="round"/>
+  <line x1="28" y1="42" x2="26" y2="48" stroke="#2cbe4e" stroke-width="2" stroke-linecap="round"/>
+  <!-- Legs (right side) -->
+  <line x1="40" y1="40" x2="44" y2="46" stroke="#2cbe4e" stroke-width="2" stroke-linecap="round"/>
+  <line x1="36" y1="42" x2="38" y2="48" stroke="#2cbe4e" stroke-width="2" stroke-linecap="round"/>
+</svg>
