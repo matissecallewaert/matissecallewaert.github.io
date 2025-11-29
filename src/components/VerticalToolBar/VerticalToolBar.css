@@ -1,64 +1,128 @@
 .vertical-toolbar {
   position: fixed;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%);
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  flex-direction: column;
-  background-color: rgba(40, 44, 52, 0.8);
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 8px 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   z-index: 1000;
+  gap: 8px;
 }
 
 .toolbar-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 8px 0;
   cursor: pointer;
-  transition: all 0.2s ease;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .toolbar-icon:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  transform: scale(1.1);
+  transform: translateY(-12px) scale(1.15);
 }
 
-.toolbar-icon.active {
-  box-shadow: 0 0 5px #4c8eff;
+.toolbar-icon.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: #2cbe4e;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #2cbe4e;
 }
 
 .custom-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 8px;
-  object-fit: fill;
-  transition: transform 0.2s ease;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Animation for when windows are toggled */
-@keyframes pulse {
-  0% {
-    transform: scale(1);
+.toolbar-icon:hover .custom-icon {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Bounce animation on click */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
   }
   50% {
-    transform: scale(1.15);
-  }
-  100% {
-    transform: scale(1);
+    transform: translateY(-20px) scale(1.1);
   }
 }
 
 .toolbar-icon:active .custom-icon {
-  animation: pulse 0.3s ease;
+  animation: bounce 0.5s ease;
 }
 
-/* Optional: Add a subtle glow effect for active icons */
-.toolbar-icon.active .custom-icon {
-  filter: drop-shadow(0 0 3px rgba(76, 142, 255, 0.7));
+/* Tooltip on hover */
+.toolbar-icon::before {
+  content: attr(title);
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1001;
+}
+
+.toolbar-icon:hover::before {
+  opacity: 1;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .vertical-toolbar {
+    bottom: 10px;
+    padding: 6px 12px;
+    gap: 6px;
+    border-radius: 16px;
+  }
+
+  .toolbar-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .custom-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .toolbar-icon:hover {
+    transform: translateY(-8px) scale(1.1);
+  }
+
+  .toolbar-icon::before {
+    bottom: 60px;
+    font-size: 11px;
+    padding: 4px 8px;
+  }
 }

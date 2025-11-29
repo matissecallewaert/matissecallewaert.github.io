@@ -1,0 +1,57 @@
+.strategoo {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+strong {
+  color: #2cbe4e;
+}
+
+.strategoo-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.image-container {
+  flex-shrink: 0;
+}
+
+.text-container {
+  flex: 1;
+}
+
+.strategoo-image {
+  max-height: 300px;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .strategoo-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .text-container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .strategoo-image {
+    max-height: 180px;
+    padding: 10px 0;
+  }
+}

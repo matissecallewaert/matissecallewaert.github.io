@@ -1,4 +1,3 @@
-import React from "react";
 import Window from "../Window/Window";
 import "./RustiFlow.css";
 

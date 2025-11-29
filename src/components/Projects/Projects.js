@@ -11,15 +11,16 @@ const Projects = ({ onClose }) => {
     >
       <h3>Stuff I've done</h3>
       <p>
-        I've always loved solving problems and building cool things. I started
-        with a master's in information theory and am now finishing my second in
+        I’ve always loved solving problems and building cool things. I started
+        with a master’s in information theory and am now finishing a second in
         computer engineering. Along the way, I gained hands-on experience
         through internships at{" "}
         <a href="https://we-are.be" target="_blank" rel="noopener noreferrer">
           We Are
         </a>
         , where I worked with modern tech stacks and real-world software
-        development.
+        development, and later returned for a second internship focused on
+        project management.
       </p>
       <p>
         For my thesis projects, I built{" "}
@@ -38,7 +39,8 @@ const Projects = ({ onClose }) => {
         >
           IDLab
         </a>
-        , which even led to a published paper, and worked with{" "}
+        , which led to a published paper, and collaborated during my second
+        thesis with{" "}
         <a
           href="https://www.datameister.ai/"
           target="_blank"
@@ -46,7 +48,7 @@ const Projects = ({ onClose }) => {
         >
           DataMeister
         </a>{" "}
-        on using machine learning to clean up 3D meshes. I also worked at{" "}
+        on applying machine learning to clean up 3D meshes. I also worked at{" "}
         <a
           href="https://www.alternatief.ai/"
           target="_blank"
@@ -54,7 +56,17 @@ const Projects = ({ onClose }) => {
         >
           Alternatiefbv
         </a>
-        , a SaaS company focused on invoice management and payment reminders.
+        , a SaaS company focused on invoice management and payment reminders,
+        and later co-founded{" "}
+        <a
+          href="https://www.strategoo.be/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Strategoo
+        </a>{" "}
+        to help people improve their financial well-being by giving them tools
+        for better financial planning and easier access to financial advice.
       </p>
       <p>
         Outside of work, I redesigned a company website with a friend and built
@@ -64,9 +76,9 @@ const Projects = ({ onClose }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          ai-tetris
-        </a>{" "}
-        (a genetic algorithm for Tetris),
+          ai-tetris{" "}
+        </a>
+        (a genetic algorithm for Tetris),{" "}
         <a
           href="https://github.com/matissecallewaert/bashbuddy"
           target="_blank"
@@ -114,7 +126,7 @@ const Projects = ({ onClose }) => {
         >
           random-image-picker
         </a>{" "}
-        because I love open-source projects.
+        because I love working on open-source projects.
       </p>
     </Window>
   );

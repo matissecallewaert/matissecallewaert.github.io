@@ -1,0 +1,13 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" fill="#1c1c1c" rx="12"/>
+  <!-- Trophy cup -->
+  <path d="M 24 20 L 24 28 Q 24 34 32 34 Q 40 34 40 28 L 40 20 Z" fill="none" stroke="#2cbe4e" stroke-width="2.5"/>
+  <!-- Trophy handles -->
+  <path d="M 24 22 L 18 22 Q 16 22 16 24 L 16 26 Q 16 28 18 28 L 24 28" fill="none" stroke="#2cbe4e" stroke-width="2"/>
+  <path d="M 40 22 L 46 22 Q 48 22 48 24 L 48 26 Q 48 28 46 28 L 40 28" fill="none" stroke="#2cbe4e" stroke-width="2"/>
+  <!-- Trophy base -->
+  <rect x="28" y="34" width="8" height="8" fill="none" stroke="#2cbe4e" stroke-width="2.5"/>
+  <rect x="22" y="42" width="20" height="4" fill="#2cbe4e"/>
+  <!-- Star on trophy -->
+  <path d="M 32 24 L 33 27 L 36 27 L 33.5 29 L 34.5 32 L 32 30 L 29.5 32 L 30.5 29 L 28 27 L 31 27 Z" fill="#2cbe4e"/>
+</svg>

@@ -20,24 +20,57 @@ const Window = ({
 
   useEffect(() => {
     if (windowRef.current && !position) {
+      const container = document.body;
+      const containerWidth = container.clientWidth;
+      const containerHeight = container.clientHeight;
+      const windowWidth = windowRef.current.offsetWidth;
+      const windowHeight = windowRef.current.offsetHeight;
+
       const savedPosition = localStorage.getItem(
         `window-position-${className}`
       );
 
       if (savedPosition) {
         const parsedPosition = JSON.parse(savedPosition);
-        setPosition(parsedPosition);
 
-        windowRef.current.style.left = `${parsedPosition.x}px`;
-        windowRef.current.style.top = `${parsedPosition.y}px`;
+        // Validate and constrain the saved position to viewport boundaries
+        let validX = parsedPosition.x;
+        let validY = parsedPosition.y;
+
+        // Ensure window doesn't go off the right edge
+        if (validX + windowWidth > containerWidth) {
+          validX = Math.max(0, containerWidth - windowWidth);
+        }
+
+        // Ensure window doesn't go off the bottom edge
+        if (validY + windowHeight > containerHeight) {
+          validY = Math.max(0, containerHeight - windowHeight);
+        }
+
+        // Ensure window isn't too far left (keep at least 100px visible)
+        if (validX < -windowWidth + 100) {
+          validX = 0;
+        }
+
+        // Ensure window isn't too far up (keep at least 50px visible)
+        if (validY < 0) {
+          validY = 0;
+        }
+
+        const constrainedPosition = { x: validX, y: validY };
+        setPosition(constrainedPosition);
+
+        windowRef.current.style.left = `${validX}px`;
+        windowRef.current.style.top = `${validY}px`;
+
+        // Update localStorage with constrained position if it changed
+        if (validX !== parsedPosition.x || validY !== parsedPosition.y) {
+          localStorage.setItem(
+            `window-position-${className}`,
+            JSON.stringify(constrainedPosition)
+          );
+        }
       } else {
-        const container = document.body;
-        const containerWidth = container.clientWidth;
-        const containerHeight = container.clientHeight;
-
-        const windowWidth = windowRef.current.offsetWidth;
-        const windowHeight = windowRef.current.offsetHeight;
-
         let initialX, initialY;
 
         switch (className) {
@@ -45,20 +78,36 @@ const Window = ({
             initialX = containerWidth / 10;
             initialY = 20;
             break;
+          case "timeline":
+            initialX = (containerWidth / 8) * 5;
+            initialY = containerHeight / 10;
+            break;
+          case "dynaroster":
+            initialX = containerWidth / 3;
+            initialY = containerHeight / 5;
+            break;
+          case "strategoo":
+            initialX = containerWidth / 2.2;
+            initialY = containerHeight / 6;
+            break;
           case "bashbuddy":
             initialX = 20;
             initialY = containerHeight / 4;
             break;
           case "about-me":
-            initialX = containerWidth / 2;
+            initialX = containerWidth / 3;
             initialY = containerHeight / 3;
+            break;
+          case "award":
+            initialX = containerWidth / 5;
+            initialY = containerHeight / 1.5;
             break;
           case "rustiflow":
             initialX = containerWidth / 1.6;
             initialY = containerHeight / 4;
             break;
           case "links":
-            initialX = (containerWidth / 5) * 3;
+            initialX = (containerWidth / 5) * 2;
             initialY = -0;
             break;
           case "clock-window":
