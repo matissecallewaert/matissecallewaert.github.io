@@ -64,9 +64,18 @@ const Projects = ({ onClose }) => {
           rel="noopener noreferrer"
         >
           Strategoo
-        </a>{" "}
-        to help people improve their financial well-being by giving them tools
-        for better financial planning and easier access to financial advice.
+        </a>
+        , the consultancy firm through which we built{" "}
+        <a
+          href="https://app.strategoo.be"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Webfin
+        </a>
+        , a platform that helps people improve their financial well-being with
+        tools for better financial planning and easier access to financial
+        advice.
       </p>
       <p>
         These days most of my energy goes into{" "}

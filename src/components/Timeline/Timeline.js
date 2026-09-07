@@ -15,7 +15,7 @@ const Timeline = ({ onClose }) => {
       year: "2025-present",
       title: "Co-Founder at Strategoo",
       description:
-        "Started a company focused on helping people with their financial well-being by providing tools to manage and plan finances and get access to financial advice.",
+        "Co-founded Strategoo, the consultancy firm behind Webfin and Finny. With Webfin we help people with their financial well-being by providing tools to manage and plan finances and get access to financial advice.",
       link: "https://www.strategoo.be/",
       side: "left",
     },

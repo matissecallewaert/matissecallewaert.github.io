@@ -36,7 +36,7 @@ const VerticalToolbar = ({ windows, setWindows }) => {
     strategoo: {
       icon: "strategoo-icon.svg",
       title: "Strategoo",
-      altText: "Financial wellness platform",
+      altText: "Consultancy firm behind Webfin and Finny",
     },
     finny: {
       icon: "finny-icon.svg",

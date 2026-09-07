@@ -9,6 +9,15 @@
   align-items: flex-start;
 }
 
+.strategoo .text-container a {
+  color: var(--accent-strong);
+  font-weight: bold;
+}
+
+.strategoo .text-container a:hover {
+  text-decoration: underline;
+}
+
 .image-container {
   flex-shrink: 0;
 }
