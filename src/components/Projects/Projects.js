@@ -73,11 +73,12 @@ const Projects = ({ onClose }) => {
         <a href="https://finny.be" target="_blank" rel="noopener noreferrer">
           Finny
         </a>
-        , the company I co-founded to help starting entrepreneurs and business
-        leaders launch their business. Finny turns an idea into a complete
-        business plan with a fully synchronized financial model, with Belgian
-        fiscal rules built in. Building a company from the ground up has become
-        a big part of my life, and I love every bit of it.
+        , the company I co-founded. What drives me is guiding starting
+        entrepreneurs through the journey of launching their own business:
+        taking that leap is exciting but daunting, and I want to help them
+        take it with confidence. Living that same journey myself while
+        building Finny from the ground up has become a big part of my life,
+        and I love every bit of it.
       </p>
       <p>
         Outside of work, I redesigned a company website with a friend and built
