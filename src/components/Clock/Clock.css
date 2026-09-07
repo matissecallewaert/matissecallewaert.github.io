@@ -1,7 +1,8 @@
 .clock {
     font-family: 'Minecraft';
     font-size: 48px;
-    color: white; /* Dark gray color */
+    color: var(--text-primary);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .clock-window {

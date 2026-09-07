@@ -1,3 +1,31 @@
+:root {
+  /* Liquid glass design tokens */
+  --glass-bg: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.32) 45%,
+    rgba(255, 255, 255, 0.42) 100%
+  );
+  --glass-bg-header: rgba(255, 255, 255, 0.35);
+  --glass-bg-inset: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-highlight: rgba(255, 255, 255, 0.85);
+  --glass-shadow: 0 20px 45px rgba(31, 38, 65, 0.18),
+    0 4px 12px rgba(31, 38, 65, 0.08);
+  --glass-shadow-lifted: 0 32px 64px rgba(31, 38, 65, 0.28),
+    0 8px 20px rgba(31, 38, 65, 0.12);
+  --glass-blur: blur(28px) saturate(180%);
+
+  --text-primary: #1c2333;
+  --text-secondary: rgba(28, 35, 51, 0.68);
+  --accent: #16a34a;
+  --accent-strong: #15803d;
+  --accent-soft: rgba(22, 163, 74, 0.16);
+
+  --radius-window: 22px;
+  --radius-control: 14px;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",

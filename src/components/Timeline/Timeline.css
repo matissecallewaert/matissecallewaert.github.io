@@ -25,7 +25,7 @@
   left: 50%;
   top: 0;
   width: 3px;
-  background-color: #2cbe4e;
+  background-color: var(--accent-strong);
   transform: translateX(-50%);
   height: calc(100% - 40px);
   pointer-events: none;
@@ -38,7 +38,7 @@
   top: 0;
   bottom: 0;
   width: 3px;
-  background-color: #2cbe4e;
+  background-color: var(--accent-strong);
   transform: translateX(-50%);
   min-height: 100%;
   pointer-events: none;
@@ -60,12 +60,12 @@
 /* Year above the event - positioned at the top */
 .timeline-year {
   position: relative;
-  background-color: black;
-  color: #2cbe4e;
+  background: var(--glass-bg-inset);
+  color: var(--accent-strong);
   font-weight: bold;
   font-size: 1.2rem;
   padding: 8px 16px;
-  border: 3px solid #2cbe4e;
+  border: 3px solid var(--accent-strong);
   border-radius: 20px;
   z-index: 4;
   white-space: nowrap;
@@ -83,18 +83,21 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background-color: #2cbe4e;
+  background-color: var(--accent-strong);
   border: 4px solid black;
-  box-shadow: 0 0 0 3px #2cbe4e;
+  box-shadow: 0 0 0 3px var(--accent-strong);
   z-index: 3;
 }
 */
 
 /* Event content box */
 .timeline-event-content {
-  border: 2px solid #2cbe4e;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: var(--glass-bg-inset);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    0 4px 12px rgba(31, 38, 65, 0.08);
   padding: 20px;
-  border-radius: 8px;
+  border-radius: 14px;
   transition: all 0.3s ease;
   width: 40%;
   position: relative;
@@ -131,7 +134,7 @@
   right: -12px;
   transform: translateY(-50%);
   border-width: 10px 0 10px 12px;
-  border-color: transparent transparent transparent #2cbe4e;
+  border-color: transparent transparent transparent var(--accent-strong);
 }
 
 /* Right side events */
@@ -149,7 +152,7 @@
   left: -12px;
   transform: translateY(-50%);
   border-width: 10px 12px 10px 0;
-  border-color: transparent #2cbe4e transparent transparent;
+  border-color: transparent var(--accent-strong) transparent transparent;
 }
 
 .timeline-title,
@@ -157,7 +160,7 @@
   font-weight: bold;
   font-size: 1.1rem;
   margin-bottom: 10px;
-  color: white;
+  color: var(--text-primary);
   text-decoration: none;
 }
 
@@ -166,7 +169,7 @@
 }
 
 .timeline-description {
-  color: white;
+  color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -177,17 +180,17 @@
 }
 
 .timeline-content::-webkit-scrollbar-track {
-  background: #1c1c1c;
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 4px;
 }
 
 .timeline-content::-webkit-scrollbar-thumb {
-  background: #2cbe4e;
+  background: var(--accent-strong);
   border-radius: 4px;
 }
 
 .timeline-content::-webkit-scrollbar-thumb:hover {
-  background: #25a842;
+  background: var(--accent);
 }
 
 /* Mobile styles */
@@ -230,7 +233,7 @@
     left: -12px !important;
     right: auto !important;
     border-width: 10px 12px 10px 0 !important;
-    border-color: transparent #2cbe4e transparent transparent !important;
+    border-color: transparent var(--accent-strong) transparent transparent !important;
   }
 
   .timeline-marker {

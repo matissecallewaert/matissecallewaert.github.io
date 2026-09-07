@@ -4,6 +4,14 @@ import "./Timeline.css";
 const Timeline = ({ onClose }) => {
   const timelineEvents = [
     {
+      year: "2026-present",
+      title: "Co-Founder at Finny",
+      description:
+        "Co-founded Finny, a platform that helps starting entrepreneurs and business leaders launch their company with AI-assisted business plans and fully synchronized financial models.",
+      link: "https://finny.be",
+      side: "right",
+    },
+    {
       year: "2025-present",
       title: "Co-Founder at Strategoo",
       description:

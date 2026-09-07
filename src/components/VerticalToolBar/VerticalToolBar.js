@@ -33,15 +33,15 @@ const VerticalToolbar = ({ windows, setWindows }) => {
       title: "Timeline",
       altText: "My journey timeline",
     },
-    dynaroster: {
-      icon: "logo_black_without.svg",
-      title: "DynaRoster",
-      altText: "Workforce scheduling solution",
-    },
     strategoo: {
-      icon: "logo_short.svg",
+      icon: "strategoo-icon.svg",
       title: "Strategoo",
       altText: "Financial wellness platform",
+    },
+    finny: {
+      icon: "finny-icon.svg",
+      title: "Finny",
+      altText: "Business plan platform for starting entrepreneurs",
     },
     bashbuddy: {
       icon: "bashbuddy-icon.svg",

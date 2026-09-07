@@ -19,8 +19,8 @@ import ArtPortfolio from "./components/ArtPortfolio/ArtPortfolio";
 import AITetris from "./components/AITetris/AITetris";
 import GuidGenerator from "./components/GuidGenerator/GuidGenerator";
 import Timeline from "./components/Timeline/Timeline";
-import DynaRoster from "./components/DynaRoster/DynaRoster";
 import Strategoo from "./components/Strategoo/Strategoo";
+import Finny from "./components/Finny/Finny";
 import Award from "./components/Award/Award";
 
 const AppContent = () => {
@@ -30,8 +30,8 @@ const AppContent = () => {
     "art-portfolio": false,
     "ai-tetris": false,
     "guid-generator": false,
-    dynaroster: false,
     strategoo: false,
+    finny: true,
     award: true,
     timeline: true,
     links: true,
@@ -61,7 +61,18 @@ const AppContent = () => {
   useEffect(() => {
     const savedWindowStates = localStorage.getItem("windowStates");
     if (savedWindowStates) {
-      setWindows(JSON.parse(savedWindowStates));
+      // Merge on top of defaults so windows added after a visitor's
+      // last visit still appear, and drop saved keys for windows that
+      // no longer exist
+      const saved = JSON.parse(savedWindowStates);
+      setWindows((defaultWindows) =>
+        Object.fromEntries(
+          Object.keys(defaultWindows).map((key) => [
+            key,
+            key in saved ? saved[key] : defaultWindows[key],
+          ])
+        )
+      );
     }
   }, []);
 
@@ -91,8 +102,8 @@ const AppContent = () => {
         <Links />
         <Clock />
         <Strategoo />
+        <Finny />
         <RustiFlow />
-        <DynaRoster />
         <BashBuddy />
         <AITetris />
         <ArtPortfolio />
@@ -109,8 +120,8 @@ const AppContent = () => {
         {windows["projects"] && <Projects onClose={handleWindowClose} />}
         {windows["timeline"] && <Timeline onClose={handleWindowClose} />}
         {windows["links"] && <Links onClose={handleWindowClose} />}
-        {windows["dynaroster"] && <DynaRoster onClose={handleWindowClose} />}
         {windows["strategoo"] && <Strategoo onClose={handleWindowClose} />}
+        {windows["finny"] && <Finny onClose={handleWindowClose} />}
         {windows["bashbuddy"] && <BashBuddy onClose={handleWindowClose} />}
         {windows["rustiflow"] && <RustiFlow onClose={handleWindowClose} />}
         {windows["art-portfolio"] && (

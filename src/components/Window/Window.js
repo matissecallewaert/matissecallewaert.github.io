@@ -18,6 +18,13 @@ const Window = ({
   const [windowZIndex, setWindowZIndex] = useState(10);
   const windowRef = useRef(null);
 
+  // A freshly opened window (e.g. from the dock) should appear on top,
+  // not wait for its first click or drag
+  useEffect(() => {
+    highestZIndex += 1;
+    setWindowZIndex(highestZIndex);
+  }, []);
+
   useEffect(() => {
     if (windowRef.current && !position) {
       const container = document.body;
@@ -82,13 +89,13 @@ const Window = ({
             initialX = (containerWidth / 8) * 5;
             initialY = containerHeight / 10;
             break;
-          case "dynaroster":
-            initialX = containerWidth / 3;
-            initialY = containerHeight / 5;
-            break;
           case "strategoo":
             initialX = containerWidth / 2.2;
             initialY = containerHeight / 6;
+            break;
+          case "finny":
+            initialX = containerWidth / 2.5;
+            initialY = containerHeight / 2;
             break;
           case "bashbuddy":
             initialX = 20;
