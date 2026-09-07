@@ -67,17 +67,17 @@ const Projects = ({ onClose }) => {
         </a>{" "}
         to help people improve their financial well-being by giving them tools
         for better financial planning and easier access to financial advice.
-        Most recently I co-founded{" "}
-        <a
-          href="https://finny.be"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      </p>
+      <p>
+        These days most of my energy goes into{" "}
+        <a href="https://finny.be" target="_blank" rel="noopener noreferrer">
           Finny
         </a>
-        , a platform that helps starting entrepreneurs launch their company
-        with AI-assisted business plans and fully synchronized financial
-        models.
+        , the company I co-founded to help starting entrepreneurs and business
+        leaders launch their business. Finny turns an idea into a complete
+        business plan with a fully synchronized financial model, with Belgian
+        fiscal rules built in. Building a company from the ground up has become
+        a big part of my life, and I love every bit of it.
       </p>
       <p>
         Outside of work, I redesigned a company website with a friend and built
